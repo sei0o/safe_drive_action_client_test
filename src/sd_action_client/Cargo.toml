@@ -1,0 +1,15 @@
+[package]
+name = "sd_action_client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+safe_drive = { path = "/home/seioinoue/safe_drive" }
+example_msg = { path = "/home/seioinoue/ws/example_msg" }
+
+[package.metadata.ros]
+msg = ["example_msg"]
+msg_dir = "/home/seioinoue/ws/example_msg"
+safe_drive_path = "/home/seioinoue/safe_drive"
