@@ -1,5 +1,6 @@
 use example_msg::action::*;
 use safe_drive::{self, action, context::Context, error::DynError, RecvResult};
+use std::{thread, time::Duration};
 
 fn main() -> Result<(), DynError> {
     let ctx = Context::new()?;
@@ -8,6 +9,8 @@ fn main() -> Result<(), DynError> {
 
     let mut client: action::client::Client<MyAction> =
         action::client::Client::new(node_client, "test_action", None)?;
+
+    thread::sleep(Duration::from_millis(100));
 
     // wait for action server
     // loop {
