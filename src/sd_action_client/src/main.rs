@@ -1,8 +1,5 @@
 use example_msg::action::*;
-use safe_drive::{
-    self, action, context::Context, error::DynError, msg::unique_identifier_msgs::msg::UUID,
-    RecvResult,
-};
+use safe_drive::{self, action, context::Context, error::DynError, RecvResult};
 
 fn main() -> Result<(), DynError> {
     let ctx = Context::new()?;
@@ -21,9 +18,10 @@ fn main() -> Result<(), DynError> {
 
     // send goal request
     let goal = MyAction_Goal { a: 100 };
-    let goal_id = UUID {
-        uuid: [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8],
-    };
+    let mut goal_id = unique_identifier_msgs::msg::UUID::new().unwrap();
+
+    goal_id.uuid = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
     let goal_request = MyAction_SendGoal_Request {
         // TODO: ergonomic apis
         // TODO: generate UUID w/ uuid crate. rclcpp's ClientBase::generate_goal_id

@@ -8,8 +8,9 @@ edition = "2021"
 [dependencies]
 safe_drive = { path = "/home/seioinoue/safe_drive" }
 example_msg = { path = "/home/seioinoue/ws/example_msg" }
+unique_identifier_msgs = { path = "/home/seioinoue/ws/unique_identifier_msgs" }
 
 [package.metadata.ros]
-msg = ["example_msg"]
+msg = ["example_msg", "unique_identifier_msgs"]
 msg_dir = "/home/seioinoue/ws/example_msg"
 safe_drive_path = "/home/seioinoue/safe_drive"
