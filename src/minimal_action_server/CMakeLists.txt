@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(examples_rclcpp_minimal_action_server)
+project(my_examples_rclcpp_minimal_action_server)
 
 # Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
